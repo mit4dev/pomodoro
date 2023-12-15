@@ -1,1 +1,10 @@
-{}
+{
+  "start": "Başlat",
+  "stop": "Durdur",
+  "light": "Gündüz",
+  "dark": "Gece",
+  "system": "Sistem",
+  "timer": "Zamanlayıcı",
+  "about": "Hakkında",
+  "welcome": "Hoşgeldiniz!"
+}

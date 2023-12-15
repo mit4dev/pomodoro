@@ -1,17 +1,14 @@
 'use client'
 
-import { AppProgressBar } from 'next-nprogress-bar'
-import { ReactNode, Suspense } from 'react'
+import { ReactNode } from 'react'
 import { Toaster } from 'react-hot-toast'
+import { AppContextProvider } from './AppContextProvider'
 
 export default function RootProvider({ children }: { children: ReactNode }) {
   return (
     <>
-      <Suspense>
-        <AppProgressBar />
-      </Suspense>
       <Toaster toastOptions={{ duration: 5000, position: 'top-right' }} />
-      <>{children}</>
+      <AppContextProvider>{children}</AppContextProvider>
     </>
   )
 }

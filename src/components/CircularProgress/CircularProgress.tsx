@@ -1,30 +1,22 @@
 interface CircularProgressProps {
   progress: number
-  /**
-   * Button contents
-   */
-  label: string
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void
 }
 
-export const CircularProgress = ({ label, progress, ...props }: CircularProgressProps) => {
+export const CircularProgress = ({ progress }: CircularProgressProps) => {
   const center = 100
   const r = 80
   const offset = (1 - progress) * 2 * Math.PI * r
   const dashArray = `${2 * Math.PI * r} ${offset}`
 
   return (
-    <div className="flex items-center justify-center w-80 h-80">
+    <div className="flex flex-1 items-center justify-center">
       <svg width="100%" viewBox="0 0 200 200" className="-rotate-90">
         <circle
           cx={center}
           cy={center}
           r={r}
           stroke="currentColor"
-          stroke-width="25"
+          strokeWidth="25"
           fill="transparent"
           className="text-sky-200"
         />
@@ -34,10 +26,10 @@ export const CircularProgress = ({ label, progress, ...props }: CircularProgress
           cy={center}
           r={r}
           stroke="currentColor"
-          stroke-width="30"
+          strokeWidth="30"
           fill="transparent"
-          stroke-dasharray={dashArray}
-          stroke-dashoffset={offset}
+          strokeDasharray={dashArray}
+          strokeDashoffset={offset}
           className="text-sky-600 animate-pulse"
         />
       </svg>

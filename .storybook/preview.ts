@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react'
+import '../src/i18n'
 import '../tailwind.css'
 
 import { withThemeByClassName } from '@storybook/addon-themes'

@@ -1,15 +1,21 @@
-import { Suspense } from 'react'
-import Timer from './components/Timer'
+import { AboutContent } from './components/AboutContent'
+import TimerContent from './components/TimerContent'
 
 export default function Home() {
   return (
-    <Suspense>
-      <main className="dark:bg-slate-800 flex min-h-screen flex-col items-center justify-between p-24">
-        <div className="">
-          <p className="text-2xl">Welcome to pomodoro timer</p>
-          <Timer />
-        </div>
-      </main>
-    </Suspense>
+    <main className="flex flex-col snap-y snap-mandatory overflow-y-scroll">
+      <section className="snap-center">
+        <TimerContent />
+      </section>
+      <section className="h-screen snap-start">
+        <AboutContent />
+      </section>
+      <section className="h-screen snap-end">
+        <AboutContent />
+      </section>
+      <section className="h-screen snap-end">
+        <AboutContent />
+      </section>
+    </main>
   )
 }
