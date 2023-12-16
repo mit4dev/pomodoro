@@ -10,10 +10,10 @@ export function Header() {
     <header className="flex h-12 bg-sky-800 dark:bg-slate-950">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex gap-10">
-          <a className="" href="#timer">
+          <a className="text-white" href="#timer">
             {t('timer')}
           </a>
-          <a className="" href="#about">
+          <a className="text-white" href="#about">
             {t('about')}
           </a>
         </div>

@@ -2,8 +2,6 @@ import RootProvider from '@/provider/RootProvider'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../i18n'
-import { Footer } from './components/Footer'
-import { Header } from './components/Header'
 import { Main } from './components/Main'
 import './globals.css'
 
@@ -17,11 +15,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className}`}>
+      <body className={`${inter.className} overflow-y-auto`}>
         <RootProvider>
-          <Header />
+          {/* <Header /> */}
           <Main>{children}</Main>
-          <Footer />
+          {/* <Footer /> */}
         </RootProvider>
       </body>
     </html>

@@ -37,7 +37,13 @@ const actionMap: Record<ThemeMode, () => void> = {
     localStorage.setItem(localStorageKey, 'light')
     document.documentElement.classList.remove('dark')
   },
-  system: () => localStorage.removeItem(localStorageKey),
+  system: () => {
+    localStorage.removeItem(localStorageKey)
+
+    if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.remove('dark')
+    }
+  },
 }
 
 const nextThemeMap: Record<ThemeMode, ThemeMode> = {
@@ -87,13 +93,15 @@ const getThemeMode = (): ThemeMode => {
 function ThemeSwitcher() {
   const { t } = useTranslation()
   const [colorMode, setColorMode] = useState(() => getThemeMode())
-  const { setLoading } = useAppContext()
+  const { loading, setLoading } = useAppContext()
 
   useEffect(() => {
     const initFn = defaultInitMap[colorMode]
     initFn()
 
-    setTimeout(() => setLoading(false), 500)
+    if (loading) {
+      setLoading(false)
+    }
   }, [colorMode])
 
   /**
@@ -106,7 +114,7 @@ function ThemeSwitcher() {
   return (
     <div>
       <button
-        className="flex gap-2 items-center justify-end"
+        className="flex gap-2 items-center justify-end text-white"
         onClick={() => {
           const nextTheme = nextThemeMap[displayMode]
           const changeThemeFn = actionMap[nextTheme]

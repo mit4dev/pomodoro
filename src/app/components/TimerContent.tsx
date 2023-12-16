@@ -9,12 +9,12 @@ function TimerContent() {
   const { t } = useTranslation()
 
   return (
-    <div className="min-h-screen bg-slate-100 dark:bg-slate-800">
+    <div className="h-full bg-white-50 dark:bg-slate-700">
       <div id="timer" className="container mx-auto flex flex-col items-center">
-        <div className="flex flex-1 h-max">
-          <p className="text-3xl text-slate-900 dark:text-slate-300 mt-2">{t('welcome')}</p>
+        <div className="flex flex-1 ">
+          <p className="text-3xl text-slate-900 dark:text-slate-300 my-6">{t('welcome')}</p>
         </div>
-        <div className="flex xs:w-2/3 md:w-1/2 lg:w-2/5">
+        <div className="relative flex xs:w-2/3 md:w-1/2 lg:w-2/5">
           <Timer progress={0} />
         </div>
       </div>
