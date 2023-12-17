@@ -1,10 +1,10 @@
 'use client'
 
+import { PageOverlay } from '@/app/components/PageOverlay'
 import { useAppContext } from '@/context/AppContext'
 import { ReactNode } from 'react'
-import { PageOverlay } from './PageOverlay'
 
-export function Main({ children }: { children: ReactNode }) {
+export function AppOverlayProvider({ children }: { children: ReactNode }) {
   const { loading } = useAppContext()
 
   return (

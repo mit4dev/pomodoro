@@ -7,7 +7,7 @@ export function Header() {
   const { t } = useTranslation()
 
   return (
-    <header className="flex h-12 bg-sky-800 dark:bg-slate-950">
+    <header className="flex h-12 bg-sky-800 dark:bg-slate-950 snap-start">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex gap-10">
           <a className="text-white" href="#timer">

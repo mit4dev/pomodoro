@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="flex h-20 text-xs bg-slate-800 text-white">
+    <footer className="flex h-20 text-xs bg-slate-800 text-white snap-start">
       <div className="container flex flex-col items-center justify-center">
         <p>All rights reserved. 2023. Mustafa İrfan TARI</p>
         <p>
