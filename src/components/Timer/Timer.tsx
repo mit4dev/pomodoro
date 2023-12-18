@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic'
 import { CircularProgress } from '../CircularProgress/CircularProgress'
 import ActionBar from './ActionBar'
 
@@ -7,7 +8,7 @@ export type TimerProps = {
   onEnd?: () => void
 }
 
-export default function Timer({ progress, onStart: onStartProp, onEnd: onEndProp }: TimerProps) {
+function Timer({ progress, onStart: onStartProp, onEnd: onEndProp }: TimerProps) {
   const onStartClick = () => {
     console.log('onStartClick')
     if (typeof onStartProp === 'function') {
@@ -31,3 +32,5 @@ export default function Timer({ progress, onStart: onStartProp, onEnd: onEndProp
     </div>
   )
 }
+
+export default dynamic(() => Promise.resolve(Timer), { ssr: false })

@@ -30,7 +30,7 @@ export const CircularProgress = ({ progress }: CircularProgressProps) => {
           fill="transparent"
           strokeDasharray={dashArray}
           strokeDashoffset={offset}
-          className="text-sky-600 animate-pulse"
+          className="text-sky-600"
         />
       </svg>
       <span className="absolute text-5xl text-sky-900 dark:text-white">{(progress * 100).toFixed(1)}%</span>
